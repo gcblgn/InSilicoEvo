@@ -1,7 +1,7 @@
 # InSilicoEvo
 # InSilicoEvo
 
-**A fully computational pipeline for bidirectional enzyme thermal adaptation**  
+**A fully computational pipeline for enzyme adaptation**  
 *ISEF 2026 — Computational Biology & Bioinformatics (CBIO)*
 
 ---

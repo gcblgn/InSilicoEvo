@@ -21,7 +21,7 @@ it can be applied to different enzyme families in both directions — making
 an enzyme work better in cold environments, or better in hot ones.
 
 Two case studies were used to demonstrate the pipeline:
-- **TfCut2** (a cutinase) — cold adaptation: reducing optimal working temperature
+- **Tc-Cut1** (a cutinase) — cold adaptation: reducing optimal working temperature
 - **Pa-LipA** (a lipase) — heat adaptation: increasing optimal working temperature
 
 ---
@@ -107,3 +107,59 @@ Variants with high mean pLDDT and well-folded predicted structures
 are prioritized as final candidates.
 
 ---
+
+## Repository Structure
+```
+InSilicoEvo/
+│
+├── 0_extract_data.py              # Data loading and organism-based filtering
+├── 1_calculate_enzyme_features.py # 456-feature extraction with Biopython
+├── 2_train_model_automlV3.py      # PyCaret AutoML model comparison & selection
+├── 3_directed_evolutionV5.py      # Variant generation + Topt prediction
+├── 5_esmfold_structure_prediction.py  # ESMFold structural validation
+│
+└── enzyme_feature_lib.py          # Shared feature calculation library
+```
+
+---
+
+## Requirements
+```
+biopython
+pycaret[full]
+xgboost
+lightgbm
+catboost
+torch
+transformers
+esm
+pandas
+numpy
+scikit-learn
+```
+
+---
+
+## Reproducibility
+
+- Data: BRENDA SQLite database, version 2018.2 (available on [Zenodo](https://zenodo.org/))
+- All scripts are self-contained and runnable in sequence (0 → 5)
+- No proprietary tools or wet-lab data required
+
+---
+
+## Future Directions
+
+- Rosetta (ΔΔG) as a third validation layer
+- GROMACS molecular dynamics as a fourth validation layer
+- pH optimization as an additional case study
+- Web or CLI interface for broader accessibility
+
+---
+
+## Competition
+
+**ISEF 2026** | Fair ID: TUR002 | Project ID: CBIO002  
+Category: Computational Biology and Bioinformatics
+
+*Academic advisors: Dr. Ertik, Dr. Kara*

@@ -106,21 +106,6 @@ are prioritized as final candidates.
 
 ---
 
-## Repository Structure
-```
-InSilicoEvo/
-│
-├── 0_extract_data.py              # Data loading and organism-based filtering
-├── 1_calculate_enzyme_features.py # 456-feature extraction with Biopython
-├── 2_train_model_automlV3.py      # PyCaret AutoML model comparison & selection
-├── 3_directed_evolutionV5.py      # Variant generation + Topt prediction
-├── 5_esmfold_structure_prediction.py  # ESMFold structural validation
-│
-└── enzyme_feature_lib.py          # Shared feature calculation library
-```
-
----
-
 ## Requirements
 ```
 biopython

@@ -9,16 +9,18 @@
 ## What does this project do?
 
 Enzymes are proteins that speed up chemical reactions. Their performance is
-tightly linked to temperature: most enzymes only work well within a narrow
-temperature range. Engineering enzymes to work better at different
-temperatures usually requires expensive and time-consuming laboratory
-experiments.
+tightly linked to properties such as temperature, pH, and substrate specificity.
+Engineering enzymes to perform better under specific conditions usually requires
+expensive and time-consuming laboratory experiments.
 
 This project presents **InSilicoEvo**, a fully computational (in silico)
-pipeline that predicts and generates thermally adapted enzyme variants
-without any wet-lab work. The pipeline is designed to be **generalizable**:
-it can be applied to different enzyme families in both directions — making
-an enzyme work better in cold environments, or better in hot ones.
+pipeline that predicts and generates optimized enzyme variants without any
+wet-lab work. The pipeline is designed to be **generalizable**: it can be
+applied to different enzyme families and different target properties.
+
+To demonstrate this, **thermal adaptation was used as a proof-of-concept case study**
+in two directions — reducing the optimal working temperature of one enzyme
+(cold adaptation) and increasing it in another (heat adaptation).
 
 Two case studies were used to demonstrate the pipeline:
 - **Tc-Cut1** (a cutinase) — cold adaptation: reducing optimal working temperature
@@ -94,16 +96,6 @@ plausibility scores are deprioritized.
 [ESMFold](https://github.com/facebookresearch/esm) predicts the 3D structure
 of each variant and produces **pLDDT** scores (per-residue confidence):
 
-| pLDDT | Confidence |
-|---|---|
-| ≥ 90 | Very High |
-| 70 – 90 | Confident |
-| 50 – 70 | Moderate |
-| < 50 | Low |
-
-Variants with high mean pLDDT and well-folded predicted structures
-are prioritized as final candidates.
-
 ---
 
 ## Requirements
@@ -131,18 +123,5 @@ scikit-learn
 
 ---
 
-## Future Directions
-
-- Rosetta (ΔΔG) as a third validation layer
-- GROMACS molecular dynamics as a fourth validation layer
-- pH optimization as an additional case study
-- Web or CLI interface for broader accessibility
-
----
-
-## Competition
-
-**ISEF 2026** | Fair ID: TUR002 | Project ID: CBIO002  
-Category: Computational Biology and Bioinformatics
 
 

@@ -37,19 +37,17 @@ via Zenodo) was used as the data source. Enzymes were filtered by **host
 organism ecological niche** (psychrophilic, mesophilic, or thermophilic)
 rather than raw temperature values, to prevent bias in the machine learning model.
 
-From each enzyme sequence, **456 biochemical and physicochemical features**
+From each enzyme sequence, a comprehensive set of **biochemical and physicochemical features**
 were calculated using [Biopython](https://biopython.org/)'s `ProteinAnalysis`
-module. These features cover:
+module. These features cover several categories, including:
 
-| Category | # Features |
-|---|---|
-| Global protein properties (aromaticity, hydrophobicity, pI, etc.) | 10 |
-| Amino acid frequencies | 20 |
-| Dipeptide frequencies | 400 |
-| Optimal growth temperature (OGT) | 1 |
-| Physicochemical + structural derived | 25 |
-| **Total** | **456** |
+- **Global protein properties** — aromaticity, hydrophobicity, instability index, isoelectric point (pI), molecular weight, and more
+- **Amino acid frequencies** — relative occurrence of each of the 20 standard amino acids
+- **Dipeptide frequencies** — relative occurrence of all possible two-amino-acid combinations
+- **Optimal growth temperature (OGT)** — the temperature at which the host organism grows best
 
+The exact number of features may vary depending on the enzyme and the
+filters applied during preprocessing.
 ---
 
 ### Step 2 — Machine Learning Model for Topt Prediction

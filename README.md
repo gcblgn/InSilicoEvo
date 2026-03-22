@@ -162,4 +162,4 @@ scikit-learn
 **ISEF 2026** | Fair ID: TUR002 | Project ID: CBIO002  
 Category: Computational Biology and Bioinformatics
 
-*Academic advisors: Dr. Ertik, Dr. Kara*
+
